@@ -2,10 +2,7 @@ package com.jsotto.Market.persistence.mapper;
 
 import com.jsotto.Market.domain.Category;
 import com.jsotto.Market.persistence.entity.Categoria;
-import org.mapstruct.InheritConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
@@ -17,7 +14,7 @@ public interface CategoryMapper {
     Category toCategory(Categoria categoria);
 
     //Hace el mapeo inverso de el que ya tenemos
-    @InheritConfiguration
-    @Mapping(target = "productos", ignore = true)
+    @InheritInverseConfiguration
+//    @Mapping(target = "productos", ignore = true)
     Categoria toCategoria(Category category);
 }

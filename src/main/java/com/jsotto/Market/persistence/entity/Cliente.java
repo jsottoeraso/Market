@@ -1,5 +1,7 @@
 package com.jsotto.Market.persistence.entity;
 
+import org.mapstruct.Builder;
+
 import javax.persistence.*;
 import java.util.List;
 
